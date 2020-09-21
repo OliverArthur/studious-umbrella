@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  border-radius: 0.8rem;
+  padding: $spacing-6;
+  width: 100%;
+
+  &__media, &__content {
+    width: 100%;
+  }
+
+  &__media {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: $spacing-2;
+    line-height: 1.5;
+    margin-left: $spacing-4;
+
+    .title {
+      @include font-size(20px);
+
+      @include media(tablet) {
+        @include font-size(32px);
+      }
+    }
+
+    .date {
+      @include font-size(16px);
+      display: block;
+      font-weight: 200;
+      margin-bottom: $spacing-3;
+    }
+
+    .type {
+      @include font-size(16px);
+      background-color: $yellow-700;
+      border-radius: 0.4rem;
+      color: $black-primary;
+      display: inline-block;
+      padding: $spacing-2;
+    }
+  }
+}

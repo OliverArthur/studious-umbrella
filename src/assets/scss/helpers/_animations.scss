@@ -1,0 +1,25 @@
+// VueJs animation transition
+.slider-enter-active,
+.slider-leave-active {
+  transition: transform 0.3s;
+}
+
+.slider-enter,
+.slider-leave-to {
+  transform: translateY(100%);
+}
+
+.slider-enter-to,
+.slider-leave {
+  transform: translateY(0);
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

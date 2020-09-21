@@ -1,0 +1,25 @@
+.dot {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: $spacing-4 0;
+
+  &__item {
+    border-radius: 100%;
+    border: 1px solid $black-primary;
+    height: 1.2rem;
+    margin-right: $spacing-2;
+    width: 1.2rem;
+
+    &--active {
+      background-color: $yellow-700;
+      border-color: $yellow-700;
+    }
+  }
+
+  &__button {
+    height: 100%;
+    width: 100%;
+  }
+}

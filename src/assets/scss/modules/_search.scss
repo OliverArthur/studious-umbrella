@@ -1,0 +1,97 @@
+.search {
+  --radius: 0.8rem;
+  --duration: .3s;
+  --height: 5rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+
+  @include media(tablet) {
+    padding: $spacing-6;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: $font-family-headline;
+    font-size: $text-3xl;
+  }
+
+  &__form{
+    background-color: $yellow-700;
+    border-radius: var(--radius);
+    position: relative;
+    width: 25rem;
+    @include media(tablet) {
+      width: 30rem;
+    }
+  }
+
+  &__control, &__button {
+    @include elevation(1);
+  }
+
+
+  &__control, &__button {
+    @include font-size(18px);
+
+    height: 5rem;
+    font-family: $font-family-base;
+    border: 0;
+    color: $black-primary;
+  }
+
+  &__control[type="search"] {
+      outline: 0;
+      width: 100%;
+      background: $gray-200;
+      padding: 0 1.6rem;
+      border-radius: var(--radius);
+      appearance: none;
+      transition: all var(--duration) var(--bez);
+      transition-property: width, border-radius;
+      z-index: 1;
+      position: relative;
+  }
+  &__button {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--btn-width);
+    font-weight: bold;
+    background: $yellow-700;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  &__control:not(:placeholder-shown) {
+    border-radius:var(--radius) 0 0 var(--radius);
+    width: calc(100% - var(--btn-width));
+    + button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  &__message {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $spacing-1;
+
+    .error {
+      color: $error;
+      font-weight: bold;
+    }
+
+    .info {
+      color: $blue-700;
+    }
+  }
+}

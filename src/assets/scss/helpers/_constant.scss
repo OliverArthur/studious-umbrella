@@ -1,0 +1,41 @@
+// FONTS
+$font-family-base       : 'Noto Sans JP', sans-serif !default;
+$font-family-headline   : 'Noto Sans KR', sans-serif !default;
+
+// TEXT
+$text-base              : 1rem !default;
+$text-xs                : 0.75rem !default;
+$text-sm                : 0.875rem !default;
+$text-lg                : 1.215rem !default;
+$text-xl                : 1.25rem !default;
+$text-2xl               : 1.5rem !default;
+$text-3xl               : 2rem !default;
+$text-4xl               : 2.5rem !default;
+
+// COLORS
+$yellow-700             : #FDC02D !default;
+$gray-200               : #F5F5F5;
+$black-500              : #000000 !default;
+$black-primary          : rgba(0,0,0,0.87) !default;
+$error                  : #FF5252 !default;
+$blue-700               : #1976D2 !default;
+
+// SPACING
+$spacing-1              : 0.25rem !default;
+$spacing-2              : 0.5rem !default;
+$spacing-3              : 0.75rem !default;
+$spacing-4              : 1rem !default;
+$spacing-5              : 1.25rem !default;
+$spacing-6              : 1.5rem !default;
+$spacing-8              : 2rem !default;
+$spacing-10             : 2.5rem !default;
+$spacing-12             : 3rem !default;
+$spacing-16             : 4rem !default;
+
+
+// MEDIA QUERY
+$breakpoints: (
+        phone: 40rem,
+        tablet: 48rem,
+        desktop: 64rem,
+        bigscreen: 80rem) !default;

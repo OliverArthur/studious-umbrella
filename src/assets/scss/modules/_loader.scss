@@ -1,0 +1,10 @@
+.loading {
+  display: block;
+  border: 0.2rem solid $yellow-700;
+  border-radius: 50%;
+  border-top: 0.2rem solid $black-primary;
+  border-bottom: 0.2rem solid $black-primary;
+  width: 2.4rem;
+  height: 2.4rem;
+  animation: spin 1.5s linear infinite;
+}

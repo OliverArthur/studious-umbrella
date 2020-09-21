@@ -1,0 +1,33 @@
+.result {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 $spacing-4;
+  position: relative;
+
+  @include media(tablet) {
+    padding: initial;
+  }
+
+  h1 {
+    @include font-size(28px);
+    @include media(tablet) {
+      @include font-size(40px);
+    }
+  }
+
+  p {
+    font-family: $font-family-base;
+    font-size: $text-xl;
+    margin-bottom: $spacing-4;
+    @include font-size(16px);
+
+    @include media(tablet) {
+      @include font-size(18px);
+      margin-bottom: $spacing-4;
+      padding: initial;
+    }
+  }
+}

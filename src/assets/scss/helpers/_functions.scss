@@ -1,0 +1,16 @@
+///
+/// Simple function to standardize font size across project
+/// @argument $size unite that will be divided by the font-base which is 16px
+/// and storage the value in the $remSize variable.
+/// @return the value of $remSize multiplied by 1rem
+///
+/// @example usage:
+/// @mixin font-size($size) {
+///    font-size: $size;
+///    font-size: calculateRem($size);
+/// }
+///
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}

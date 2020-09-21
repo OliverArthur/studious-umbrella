@@ -1,0 +1,22 @@
+.slider{
+  border-radius: 0.8rem;
+  @include elevation(1);
+  height: 25rem;
+  @include media(tablet) {
+    height: 35rem;
+  }
+  overflow: hidden;
+  width: 100%;
+
+  @include media(tablet) {
+    width: 40rem;
+  }
+
+  &__inner {
+    display: flex;
+    height: 20rem;
+    @include media(tablet) {
+      height: 32rem;
+    }
+  }
+}

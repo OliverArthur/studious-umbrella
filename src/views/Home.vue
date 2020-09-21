@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div :class="modifier" class="home">
+    <app-search />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import AppSearch from '@/components/Search'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  components: { AppSearch },
+  props: {
+    /**
+     * @description this prop can be used to apply custom css
+     * class to apply custom style.
+     */
+    modifier: {
+      type: String
+    }
   }
 }
 </script>

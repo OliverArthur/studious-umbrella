@@ -57,10 +57,13 @@ export default {
     const { movie, getFilm } = useStore()
     const cards = ref(props.data)
     const currentIndexEl = ref(0)
-
     const currentElement = computed(() => cards.value[currentIndexEl.value])
     const leftEdge = computed(() => currentIndexEl.value === 0)
     const rightEdge = computed(() => currentIndexEl.value === cards.value.length - 1)
+
+    watch(() => props.data, (newData, oldData) => {
+      cards.value = newData
+    }, { immediate: true })
 
     // get information in the first load
     getFilm(currentElement.value.Title)
@@ -85,6 +88,7 @@ export default {
 
     return {
       movie,
+      cards,
       currentIndexEl,
       currentElement,
       leftEdge,

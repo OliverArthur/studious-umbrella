@@ -22,6 +22,7 @@
 import AppSlider from '@/components/Slider'
 import { useRouter } from 'vue-router'
 import useStore from '@/hooks/useStore'
+import { watch } from 'vue'
 
 export default {
   name: 'AppResult',
@@ -42,7 +43,9 @@ export default {
     const { loadData, movies, error, message, totalResult } = useStore()
     const router = useRouter()
 
-    loadData(props.query)
+    watch(() => props.query, () => {
+      loadData(props.query)
+    }, { immediate: true })
 
     function goBack () {
       router.go(-1)

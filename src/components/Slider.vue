@@ -62,8 +62,11 @@ export default {
     const leftEdge = computed(() => currentIndexEl.value === 0)
     const rightEdge = computed(() => currentIndexEl.value === cards.value.length - 1)
 
+    // get information in the first load
     getFilm(currentElement.value.Title)
 
+    // if the currentElement computed property value change,
+    // do another call to the api to get the new movie information
     watch(() => currentElement.value, (current, prevCurrent) => {
       getFilm(current.Title)
     })

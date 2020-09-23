@@ -18,7 +18,8 @@ export default function useStore () {
     total: 0,
     loaded: false,
     hasError: false,
-    error: ''
+    error: '',
+    movie: null
   })
   // --------------------------------
   // STORE MUTATIONS
@@ -30,10 +31,22 @@ export default function useStore () {
    * this method will do a mutations which will set a new state value for movies
    * state
    *
-   * @param { Object } movies
+   * @param { Array } movies
    */
   function setMovies (movies) {
     state.movies = movies
+  }
+
+  /**
+   * @name setMovie
+   * @description This method are the representation of the Vuex mutations.
+   * this method will do a mutations which will set a new state value for movie
+   * state
+   *
+   * @param { Object } movie
+   */
+  function setMovie (movie) {
+    state.movie = movie
   }
 
   /**
@@ -91,6 +104,28 @@ export default function useStore () {
     }
   }
 
+  /**
+   * @name getFilm
+   * @description Thi method is the representation of the Vuex actions and is
+   * responsible to do a mutation for the state.
+   *
+   * @param { String } title
+   * @return { Object } will return an object movie with all the properties
+   */
+  async function getFilm (title) {
+    state.loaded = true
+    try {
+      const movie = await Movies.get(title)
+      setMovie(movie)
+      return movie
+    } catch (error) {
+      setError(error)
+      state.hasError = true
+    } finally {
+      state.loaded = false
+    }
+  }
+
   // --------------------------------
   // STORE GETTERS
   // --------------------------------
@@ -99,6 +134,7 @@ export default function useStore () {
   const getError = computed(() => state.error)
   const isLoading = computed(() => state.loaded)
   const hasError = computed(() => state.hasError)
+  const getMovie = computed(() => state.movie)
 
   return {
     movies: getMovies,
@@ -106,6 +142,8 @@ export default function useStore () {
     error: hasError,
     message: getError,
     loading: isLoading,
+    movie: getMovie,
+    getFilm,
     loadData
   }
 }

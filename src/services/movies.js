@@ -28,4 +28,24 @@ export default class Movies {
       throw new Error(error)
     }
   }
+
+  /**
+   * @name get
+   * @description GET method which retrieve a movie object from the API endpoint
+   *
+   * @static
+   * @param { String } title title of the movie
+   * endpoint
+   * @return { Object } will a movie object
+   * @memberof Movies
+   */
+  static async get (title) {
+    try {
+      const req = await fetch(`${config.API_URI}/?t=${title}&apikey=${config.API_KEY}`)
+      const payload = req.json()
+      return payload
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 }

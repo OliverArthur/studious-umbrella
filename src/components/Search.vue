@@ -26,7 +26,7 @@
 
 <script>
 import { ref } from 'vue'
-import router from '@/router'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'AppSearch',
@@ -37,6 +37,7 @@ export default {
   },
   setup () {
     const query = ref('')
+    const router = useRouter()
 
     function gotToPage () {
       router.push({

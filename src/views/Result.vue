@@ -20,7 +20,7 @@
 
 <script>
 import AppSlider from '@/components/Slider'
-import { useRouter, onBeforeRouteLeave } from 'vue-router'
+import { useRouter } from 'vue-router'
 import useStore from '@/hooks/useStore'
 
 export default {
@@ -43,10 +43,6 @@ export default {
     const router = useRouter()
 
     loadData(props.query)
-
-    onBeforeRouteLeave((to, from) => {
-      console.log(to.params.query) // eslint-disable-line
-    })
 
     function goBack () {
       router.go(-1)

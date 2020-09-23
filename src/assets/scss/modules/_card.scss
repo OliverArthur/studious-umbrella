@@ -22,6 +22,10 @@
     line-height: 1.5;
     margin-left: $spacing-4;
 
+    span {
+      display: block;
+    }
+
     .title {
       @include font-size(20px);
 

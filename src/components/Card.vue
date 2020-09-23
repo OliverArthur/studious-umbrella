@@ -5,6 +5,7 @@
     </div>
     <div class="card__content">
       <span class="title">{{ title }}</span>
+      <span class="director">{{ director }}</span>
       <div class="meta">
         <span class="date">{{ releaseDate }}</span>
         <span class="type">{{ mediaType }}</span>
@@ -25,6 +26,9 @@ export default {
       type: String,
       required: true,
       default: null
+    },
+    director: {
+      type: String
     },
     releaseDate: {
       type: String,

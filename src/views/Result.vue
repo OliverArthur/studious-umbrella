@@ -14,13 +14,13 @@
       {{ message }}
       <strong><router-link to="/">Please, try again</router-link></strong>
     </p>
-    <app-slider v-if="!error" :data="movies" />
+    <app-slider v-if="!error && movies.length" :data="movies" />
   </div>
 </template>
 
 <script>
 import AppSlider from '@/components/Slider'
-import router from '@/router'
+import { useRouter, onBeforeRouteLeave } from 'vue-router'
 import useStore from '@/hooks/useStore'
 
 export default {
@@ -40,7 +40,13 @@ export default {
   },
   setup (props, ctx) {
     const { loadData, movies, error, message, totalResult } = useStore()
+    const router = useRouter()
+
     loadData(props.query)
+
+    onBeforeRouteLeave((to, from) => {
+      console.log(to.params.query) // eslint-disable-line
+    })
 
     function goBack () {
       router.go(-1)

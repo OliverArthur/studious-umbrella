@@ -106,7 +106,7 @@ export default function useStore () {
 
   /**
    * @name getFilm
-   * @description Thi method is the representation of the Vuex actions and is
+   * @description This method is the representation of the Vuex actions and is
    * responsible to do a mutation for the state.
    *
    * @param { String } title
